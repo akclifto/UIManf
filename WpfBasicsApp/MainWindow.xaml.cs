@@ -25,17 +25,17 @@ namespace WpfBasicsApp
             InitializeComponent();
         }
 
-        private void applyButton_Click(object sender, RoutedEventArgs e)
+        private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void resetButton_Click(object sender, RoutedEventArgs e)
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

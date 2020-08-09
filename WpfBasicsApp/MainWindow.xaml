@@ -18,9 +18,9 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Define button margins and name them "left top right bottom -->
-                <Button x:Name="applyButton" Click="applyButton_Click"  Margin="0 0 10 0" Grid.Column="0" Content="Apply" />
-                <Button x:Name="resetButton" Click="resetButton_Click" Margin="0 0 10 0" Grid.Column="1" Content="Reset" />
-                <Button x:Name="refreshButton" Click="refreshButton_Click" Margin="0 0 0 0" Grid.Column="2" Content="Refresh" />
+                <Button x:Name="ApplyButton" Click="ApplyButton_Click"  Margin="0 0 10 0" Grid.Column="0" Content="Apply" />
+                <Button x:Name="ResetButton" Click="ResetButton_Click" Margin="0 0 10 0" Grid.Column="1" Content="Reset" />
+                <Button x:Name="RefreshButton" Click="RefreshButton_Click" Margin="0 0 0 0" Grid.Column="2" Content="Refresh" />
 
             </Grid>
 
@@ -29,7 +29,7 @@
 
             <!-- Description with text box -->
             <TextBlock Text="Description" />
-            <TextBox x:Name="descrTextBox" Padding="3" Height="65"/>
+            <TextBox x:Name="DescrTextBox" Padding="3" Height="65"/>
 
             <!--Status and Revision Panels, using Grid-->
             <Grid>
@@ -41,20 +41,20 @@
                 <!--Status panel-->
                 <StackPanel Grid.Column="0" Margin="0 0 10 0">
                     <TextBlock Text="Status"/>
-                    <TextBox x:Name="statusTextBox" IsReadOnly="True" Background="#eee" Padding="2"/>
+                    <TextBox x:Name="StatusTextBox" IsReadOnly="True" Background="#eee" Padding="2"/>
                 </StackPanel>
 
                 <!--Revision panel-->
                 <StackPanel Grid.Column="1" Margin="0 0 0 0">
                     <TextBlock Text="Revision"/>
-                    <TextBox x:Name="revisionTextBox" IsReadOnly="True" Background="#eee" Padding="2"/>
+                    <TextBox x:Name="RevisionTextBox" IsReadOnly="True" Background="#eee" Padding="2"/>
                 </StackPanel>
 
             </Grid>
 
             <!--Part Number -->
             <TextBlock Text="Part Number"/>
-            <TextBox x:Name="partNumTextBox" IsEnabled="False" Background="#eee" Padding="2"/>
+            <TextBox x:Name="PartNumTextBox" IsEnabled="False" Background="#eee" Padding="2"/>
 
             <!--Raw Material-->
             <TextBlock Text="Raw Material" FontWeight="Bold" Margin="0 10"/>
@@ -74,20 +74,20 @@
 
                 <!--Column 1-->
                 <StackPanel Grid.Column="0" Margin="0 0 10 0">
-                    <CheckBox x:Name="weldChBox" Content="Weld"/>
-                    <CheckBox x:Name="assemblyChBox" Content="Assembly"/>
-                    <CheckBox x:Name="plasmaChBox" Content="Plasma"/>
-                    <CheckBox x:Name="laserChBox" Content="Laser"/>
-                    <CheckBox x:Name="purchaseChBox" Content="Purchase"/>
+                    <CheckBox x:Name="WeldChBox" Content="Weld"/>
+                    <CheckBox x:Name="AssemblyChBox" Content="Assembly"/>
+                    <CheckBox x:Name="PlasmaChBox" Content="Plasma"/>
+                    <CheckBox x:Name="LaserChBox" Content="Laser"/>
+                    <CheckBox x:Name="PurchaseChBox" Content="Purchase"/>
                 </StackPanel>
 
                 <!--Column 2-->
                 <StackPanel Grid.Column="1" Margin="0 0 10 0">
-                    <CheckBox x:Name="latheChBox" Content="Lathe"/>
-                    <CheckBox x:Name="drillChBox" Content="Drill"/>
-                    <CheckBox x:Name="foldChBox" Content="Fold"/>
-                    <CheckBox x:Name="rollChBox" Content="Roll"/>
-                    <CheckBox x:Name="sawChBox" Content="Saw"/>
+                    <CheckBox x:Name="LatheChBox" Content="Lathe"/>
+                    <CheckBox x:Name="DrillChBox" Content="Drill"/>
+                    <CheckBox x:Name="FoldChBox" Content="Fold"/>
+                    <CheckBox x:Name="RollChBox" Content="Roll"/>
+                    <CheckBox x:Name="Saw`ChBox" Content="Saw"/>
                 </StackPanel>
 
             </Grid>
@@ -98,11 +98,11 @@
 
             <!--Mass-->
             <TextBlock Text="Mass" Margin="0 10 0 0"/>
-            <TextBox x:Name="massTextBox" IsEnabled="False" Background="#eee" Padding="2" Margin="0 0 0 10"/>
+            <TextBox x:Name="MassTextBox" IsEnabled="False" Background="#eee" Padding="2" Margin="0 0 0 10"/>
 
             <!--Finish, Purchase info Combo Boxes, will be populated with selection options-->
             <TextBlock Text="Finish" Margin="0 0 10 0" />
-            <ComboBox x:Name="finishDropDown" SelectedIndex="0" Padding="2">
+            <ComboBox x:Name="FinishDropDown" SelectedIndex="0" Padding="2">
                 <ComboBoxItem>Painted and Sealed</ComboBoxItem>
                 <ComboBoxItem>Painted</ComboBoxItem>
                 <ComboBoxItem>Primered</ComboBoxItem>
@@ -110,14 +110,14 @@
             </ComboBox>
 
             <TextBlock Text="Purchase Information" Margin="0 10 10 0" />
-            <ComboBox x:Name="purchaseInfoDropDown" SelectedIndex="0" Padding="2">
+            <ComboBox x:Name="PurchaseInfoDropDown" SelectedIndex="0" Padding="2">
                 <ComboBoxItem>Rubber</ComboBoxItem>
                 <ComboBoxItem>Not Rubber</ComboBoxItem>
             </ComboBox>
 
             <!--Supplier Name-->
             <TextBlock Text="Supplier Name" Margin="0 10 0 0" />
-            <TextBox x:Name="supplierNameTextBox" Padding="3"/>
+            <TextBox x:Name="SupplierNameTextBox" Padding="3"/>
 
             <!--Supplier Code-->
             <TextBlock Text="Supplier Code" Margin="0 10 0 0" />
@@ -127,7 +127,7 @@
             <TextBlock Text="Additional Information" FontWeight="Bold" Margin="0 10 0 0" />
             <!--Notes panel-->
             <TextBlock Text="Note" Margin="0 10 0 0" />
-            <TextBox x:Name="noteTextBox" Padding="3"/>
+            <TextBox x:Name="NoteTextBox" Padding="3"/>
 
         </StackPanel>
     </Border>
