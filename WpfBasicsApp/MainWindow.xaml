@@ -87,14 +87,14 @@
                     <CheckBox x:Name="DrillChBox" Content="Drill"/>
                     <CheckBox x:Name="FoldChBox" Content="Fold"/>
                     <CheckBox x:Name="RollChBox" Content="Roll"/>
-                    <CheckBox x:Name="Saw`ChBox" Content="Saw"/>
+                    <CheckBox x:Name="SawChBox" Content="Saw"/>
                 </StackPanel>
 
             </Grid>
 
             <!--Length-->
             <TextBlock Text="Length" Margin="0 10 0 0" />
-            <TextBox x:Name="lengthTextBox" Padding="3"/>
+            <TextBox x:Name="LengthTextBox" Padding="3"/>
 
             <!--Mass-->
             <TextBlock Text="Mass" Margin="0 10 0 0"/>

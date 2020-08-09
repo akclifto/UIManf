@@ -27,7 +27,7 @@ namespace WpfBasicsApp
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Apply Button pressed work!");
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
