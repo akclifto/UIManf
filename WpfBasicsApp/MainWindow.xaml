@@ -59,13 +59,13 @@
             <!--Raw Material-->
             <TextBlock Text="Raw Material" FontWeight="Bold" Margin="0 10"/>
             <TextBlock Text="Material"/>
-            <ComboBox/>
+            <ComboBox x:Name="MaterialDropDown"/>
 
             <!-- Manufacturer Info -->
             <TextBlock Text="Manufacturer Information" FontWeight="Bold" Margin="0 10"/>
             <TextBlock Text="Work Centers" Margin="0 0 0 10"/>
 
-            <!--TODO Check boxes for Work Centers-->
+            <!--Check boxes for Work Centers-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
