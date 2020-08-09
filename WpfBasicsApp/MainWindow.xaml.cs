@@ -17,6 +17,9 @@ namespace WpfBasicsApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// 
+    /// NOTE:  The logic here really shouldn't be in this file.  The is the UI code behind the layout.  Follow the MVC pattern and keep the logic in controller class(es)
+    /// separate from the model and view.  
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -32,7 +35,7 @@ namespace WpfBasicsApp
         }
 
         /// <summary>
-        /// ResetButton method to reset all the fields in the UI. 
+        /// ResetButton method to reset all the fields in the UI.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
