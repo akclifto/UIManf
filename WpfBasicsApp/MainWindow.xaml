@@ -74,7 +74,7 @@
 
                 <!--Column 1-->
                 <StackPanel Grid.Column="0" Margin="0 0 10 0">
-                    <CheckBox x:Name="WeldChBox" Content="Weld"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="WeldChBox" Content="Weld"/>
                     <CheckBox x:Name="AssemblyChBox" Content="Assembly"/>
                     <CheckBox x:Name="PlasmaChBox" Content="Plasma"/>
                     <CheckBox x:Name="LaserChBox" Content="Laser"/>
