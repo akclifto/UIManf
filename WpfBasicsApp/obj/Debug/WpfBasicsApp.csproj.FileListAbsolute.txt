@@ -1,0 +1,15 @@
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\bin\Debug\WpfBasicsApp.exe.config
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\bin\Debug\WpfBasicsApp.exe
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\bin\Debug\WpfBasicsApp.pdb
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.csprojAssemblyReference.cache
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\MainWindow.g.cs
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\App.g.cs
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp_MarkupCompile.cache
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp_MarkupCompile.lref
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\MainWindow.baml
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.g.resources
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.Properties.Resources.resources
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.csproj.GenerateResource.cache
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.csproj.CoreCompileInputs.cache
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.exe
+C:\Users\Adam\source\repos\WpfBasicsApp\WpfBasicsApp\obj\Debug\WpfBasicsApp.pdb
