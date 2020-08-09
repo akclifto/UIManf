@@ -27,17 +27,20 @@ namespace WpfBasicsApp
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Apply Button pressed work!");
+            MessageBox.Show($"The description of the item is: \n\n{this.DescrTextBox.Text}");
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //example:  sets all checked boxes from work centers to flase (unchecked)
+            this.WeldChBox.IsChecked = this.AssemblyChBox.IsChecked = this.PlasmaChBox.IsChecked = this.LaserChBox.IsChecked =
+                this.PurchaseChBox.IsChecked = this.LatheChBox.IsChecked = this.DrillChBox.IsChecked = this.FoldChBox.IsChecked = 
+                this.RollChBox.IsChecked = this.SawChBox.IsChecked = false;
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Placeholder:  Refresh Needs functionality");
         }
     }
 }
