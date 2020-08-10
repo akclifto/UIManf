@@ -13,6 +13,7 @@
     exercise to work more on UIs, C# and VS frameworks. 
     
     @author Adam Clifton (akclifto@asu.edu)
+    @version 2020.08.10
     -->
     
     <Border Padding="10">
@@ -23,13 +24,14 @@
                 <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Left column-->
+            <!-- Left column:  folder tree view panel-->
             <StackPanel x:Name="TreeBasePanel" Grid.Column="0" Margin="10 0 0 0">
                 
-                <!--TODO left panel in UI-->
                 <TreeView x:Name="FolderView">
                     <TreeView.Resources>
 
+                        <!-- This is to specify, strictly, the type of thing you are 
+                        expecting to style.  -->
                         <Style TargetType="{x:Type TreeViewItem}">
                             
                         </Style>
@@ -38,7 +40,7 @@
                 </TreeView>
             </StackPanel>
 
-            <!--Right Column-->
+            <!--Right Column:  static manufacturing mock form-->
             <StackPanel x:Name="ManfInfoStackPanel" Grid.Column="1" Margin="10 0 0 0">
                 <Grid>
                     <Grid.ColumnDefinitions>
