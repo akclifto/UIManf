@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Automation.Peers;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace WpfBasicsApp
 {
@@ -35,7 +29,7 @@ namespace WpfBasicsApp
         }
         #endregion
 
-        #region On loaded
+        #region Left Side of Panel: On loaded Tree FolderView
         /// <summary>
         /// Initialization of application.
         /// </summary>
@@ -70,7 +64,7 @@ namespace WpfBasicsApp
 
         private void Folder_Expanded(object sender, RoutedEventArgs e)
         {
-            //get the tree view item
+            //get the tree view item, root item (parent)
             var item = (TreeViewItem)sender;
             //check for dummy data:  if the item count is not 1 or it is and the item is not null
             if(item.Items.Count != 1 || item.Items[0] != null)
@@ -103,11 +97,63 @@ namespace WpfBasicsApp
             //For each directory, add to the folder view tree
             directories.ForEach(directoryPath =>
             {
-                var subItem = new TreeViewItem();
+                //create directory item
+                var subItem = new TreeViewItem()
+                {
+                    //set the header as the folder name
+                    Header = GetFileFolderName(directoryPath),
+                    //set tag as full path name
+                    Tag = directoryPath
+                };
+
+                //add a dummy item to the subItem to expand the folder. 
+                subItem.Items.Add(null);
+
+                //recursive call to get all the subtrees as tree expands.
+                subItem.Expanded += Folder_Expanded;
+
+                //add child subitem to parent
+                item.Items.Add(subItem);
+                //Debug("Subitem added to folderview");
+
             });
 
         }
 
+
+
+        #endregion
+
+        #region helper methods: public
+        /// <summary>
+        /// Helper method to find the file or folder name from a full path. 
+        /// </summary>
+        /// <param name="directoryPath">The full path name</param>
+        /// <returns>Returns just the last part of the filepath name (C:\Some Folder\file.png would return "file.png")</returns>
+        private object GetFileFolderName(string directoryPath)
+        {
+            //if no path, return empty., 
+            if (string.IsNullOrEmpty(directoryPath))
+            {
+                Debug("File Folder Name path is empty, returning empty");
+                return string.Empty;
+            }
+
+            //make all slashes backslashes
+            var normalizedPath = directoryPath.Replace('/', '\\');
+            //find the last backslash in the path. 
+            var lastIndex = normalizedPath.LastIndexOf('\\');
+
+            // If only root directory, return the path itself (ex, file.png)
+            if(lastIndex <= 0)
+            {
+                return directoryPath;
+            }
+
+            //return the string name after the last backslash.
+            return directoryPath.Substring(lastIndex + 1);
+
+        }
 
         #endregion
 
@@ -164,7 +210,7 @@ namespace WpfBasicsApp
 
         #endregion
 
-        #region Debug
+        #region Debugger
         /// <summary>
         /// Debug for testing purposes.  Writes out to console with a message.
         /// </summary>

@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Left column:  folder tree view panel-->
-            <StackPanel x:Name="TreeBasePanel" Grid.Column="0">
+            <StackPanel x:Name="TreeViewPanel" Grid.Column="0">
 
                 <TreeView x:Name="FolderView">
                     <TreeView.Resources>
@@ -44,8 +44,7 @@
                                             <Image Width="20" Margin="2" Source="Images/drive.png"/>
                                             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
                                         </StackPanel>
-                                        
-                                        
+                                      
                                     </DataTemplate>
                                 </Setter.Value>
                             </Setter>
