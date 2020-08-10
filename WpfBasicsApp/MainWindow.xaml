@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="TempUI WPF Manufacturer" Height="875" Width="800" MinWidth="500" MinHeight="875">
 
+    <!--This is for practice and mock up of a UI for a manufacturing company program where there
+    for exploration purposes, is a file tree view structure on the left that allows you to view
+    the local file system and a fstatic manufacturing form on the right.  This is designed as an 
+    exercise to work more on UIs, C# and VS frameworks. 
+    
+    @author Adam Clifton (akclifto@asu.edu)
+    -->
+    
     <Border Padding="10">
 
         <Grid>
@@ -15,12 +23,22 @@
                 <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Left column-->
             <StackPanel x:Name="TreeBasePanel" Grid.Column="0" Margin="10 0 0 0">
                 
                 <!--TODO left panel in UI-->
-                
+                <TreeView x:Name="FolderView">
+                    <TreeView.Resources>
+
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            
+                        </Style>
+
+                    </TreeView.Resources>
+                </TreeView>
             </StackPanel>
 
+            <!--Right Column-->
             <StackPanel x:Name="ManfInfoStackPanel" Grid.Column="1" Margin="10 0 0 0">
                 <Grid>
                     <Grid.ColumnDefinitions>
