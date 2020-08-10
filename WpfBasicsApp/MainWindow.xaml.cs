@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -46,18 +47,67 @@ namespace WpfBasicsApp
             //contains all the info of the drive and then display it.  Minimize login in the View.  
             foreach (var drive in Directory.GetLogicalDrives())
             {
-                var item = new TreeViewItem();
-                //set the header and path for each drive.
-                item.Header = drive;
-                item.Tag = drive;
+                //set properties for a treeviewitem, basically creates TreeViewItem() ctor and sets the header and full path in the body of the ctor
+                var item = new TreeViewItem()
+                {
+                    //set the header and full path for each drive.
+                    Header = drive,
+                    Tag = drive //gives the full path
+
+                };
 
                 //dummy item to get expandable tree.
                 item.Items.Add(null);
+
+                //listen for item expansion
+                item.Expanded += Folder_Expanded;
 
                 //Add the item to the folderview panel
                 FolderView.Items.Add(item);
             }
         }
+
+
+        private void Folder_Expanded(object sender, RoutedEventArgs e)
+        {
+            //get the tree view item
+            var item = (TreeViewItem)sender;
+            //check for dummy data:  if the item count is not 1 or it is and the item is not null
+            if(item.Items.Count != 1 || item.Items[0] != null)
+            {
+                return;
+            }
+
+            //clear dummy data 
+            item.Items.Clear();
+
+            var fullPath = (string) item.Tag;
+
+            //create list to hold directories
+            var directories = new List<string>();
+
+            //try/catch to check each drive to make sure something is there to populate the tree.  Bad practice to not handle errors. 
+            //get directories and add to list
+            try
+            {
+                var dirs = Directory.GetDirectories(fullPath);
+                if(dirs.Length > 0)
+                {
+                    directories.AddRange(dirs);
+                }
+
+            } catch {
+                Debug("Caught an error when populating directories!");
+            }
+
+            //For each directory, add to the folder view tree
+            directories.ForEach(directoryPath =>
+            {
+                var subItem = new TreeViewItem();
+            });
+
+        }
+
 
         #endregion
 
