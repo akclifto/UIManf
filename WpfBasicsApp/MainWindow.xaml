@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfBasicsApp"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="TempUI WPF Manufacturer" Height="875" Width="800" MinWidth="500" MinHeight="875">
+        Title="TempUI WPF Manufacturer" Height="875" Width="700" MinWidth="650" MinHeight="875">
 
     <!--This is for practice and mock up of a UI for a manufacturing company program where there
     for exploration purposes, is a file tree view structure on the left that allows you to view
@@ -22,11 +22,11 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="450"/>
             </Grid.ColumnDefinitions>
 
             <!-- Left column:  folder tree view panel-->
-            <StackPanel x:Name="TreeBasePanel" Grid.Column="0" Margin="0 0 10 0">
+            <StackPanel x:Name="TreeBasePanel" Grid.Column="0">
 
                 <TreeView x:Name="FolderView">
                     <TreeView.Resources>
@@ -41,8 +41,8 @@
                                     <DataTemplate>
                                         <!--Icon placement and alignment in stackpanel-->
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Width="20" Margin="3" Source="Images/drive.png"/>
-                                            <TextBlock VerticalAlignment="Center" Text="Some folder example" />
+                                            <Image Width="20" Margin="2" Source="Images/drive.png"/>
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding}" />
                                         </StackPanel>
                                         
                                         

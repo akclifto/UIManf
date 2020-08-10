@@ -42,10 +42,19 @@ namespace WpfBasicsApp
         /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //loop through and get drive directories, then add each to the folderView panel on the left side of the UI window.
+            //loop through and get drive directories, then add each to the folderView panel on the left side of the UI window.  Brute force and not good practice.  Ideally, make a new class that
+            //contains all the info of the drive and then display it.  Minimize login in the View.  
             foreach (var drive in Directory.GetLogicalDrives())
             {
                 var item = new TreeViewItem();
+                //set the header and path for each drive.
+                item.Header = drive;
+                item.Tag = drive;
+
+                //dummy item to get expandable tree.
+                item.Items.Add(null);
+
+                //Add the item to the folderview panel
                 FolderView.Items.Add(item);
             }
         }
