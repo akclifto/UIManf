@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,40 @@ namespace WpfBasicsApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Constructor
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region On loaded
+        /// <summary>
+        /// Initialization of application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //loop through and get drive directories, then add each to the folderView panel on the left side of the UI window.
+            foreach (var drive in Directory.GetLogicalDrives())
+            {
+                var item = new TreeViewItem();
+                FolderView.Items.Add(item);
+            }
+        }
+
+        #endregion
+
+        #region Right Side of panel: UI manf static form.
+        /// <summary>
+        /// Right side of the panel containing UI manf static form and information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
             Debug("ApplyButton_Clicked and description field accessed.");
@@ -73,7 +103,9 @@ namespace WpfBasicsApp
             Debug("CheckBox Checked function accessed and populated lengthTextBox field.");
         }
 
+        #endregion
 
+        #region Debug
         /// <summary>
         /// Debug for testing purposes.  Writes out to console with a message.
         /// </summary>
@@ -85,5 +117,7 @@ namespace WpfBasicsApp
             //          $ + some text + {message being passed as a parameter}
             System.Diagnostics.Debug.WriteLine($"Debug: {message}");
         }
+        #endregion
+
     }
 }

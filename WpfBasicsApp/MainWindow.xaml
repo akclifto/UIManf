@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBasicsApp"
+        Loaded="Window_Loaded"
         mc:Ignorable="d"
         Title="TempUI WPF Manufacturer" Height="875" Width="800" MinWidth="500" MinHeight="875">
 
@@ -25,14 +26,30 @@
             </Grid.ColumnDefinitions>
 
             <!-- Left column:  folder tree view panel-->
-            <StackPanel x:Name="TreeBasePanel" Grid.Column="0" Margin="10 0 0 0">
-                
+            <StackPanel x:Name="TreeBasePanel" Grid.Column="0" Margin="0 0 10 0">
+
                 <TreeView x:Name="FolderView">
                     <TreeView.Resources>
 
-                        <!-- This is to specify, strictly, the type of thing you are 
+                        <!-- Style TargetType="{x:Type TreeViewItem} is to specify, strictly, the type of thing you are 
                         expecting to style.  -->
+                        <!-- This <Style> block is needed for each item in the tree view to set
+                        its parameters and template-->
                         <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="HeaderTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <!--Icon placement and alignment in stackpanel-->
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="20" Margin="3" Source="Images/drive.png"/>
+                                            <TextBlock VerticalAlignment="Center" Text="Some folder example" />
+                                        </StackPanel>
+                                        
+                                        
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            
                             
                         </Style>
 
