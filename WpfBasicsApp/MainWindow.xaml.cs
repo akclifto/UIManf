@@ -29,7 +29,9 @@ namespace WpfBasicsApp
         }
         #endregion
 
-        #region Left Side of Panel: On loaded
+        #region Left Side of Panel
+
+        #region On Loaded Method
         /// <summary>
         /// Initialization of application.
         /// </summary>
@@ -175,6 +177,7 @@ namespace WpfBasicsApp
 
         }
         #endregion Folder_Expanded
+
         #endregion Left Side of Panel
 
         #region Helper Methods:  GetFileFolderName
@@ -208,7 +211,9 @@ namespace WpfBasicsApp
 
         }
 
-        #endregion
+        #endregion Helper Methods:  GetFileFolderName
+
+        #endregion Left Side of Panel
 
         #region Right Side of panel: UI manf static form.
         /// <summary>
