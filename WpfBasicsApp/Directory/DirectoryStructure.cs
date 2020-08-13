@@ -26,6 +26,65 @@ namespace WpfBasicsApp
         }
         #endregion GetLogicalDrives
 
+        /// <summary>
+        /// Get directory's top-level content
+        /// </summary>
+        /// <param name="FullPath"> The full path to directory content</param>
+        /// <returns></returns>
+        public static List<DirectoryItem> GetDirectoryContents(string FullPath)
+        {
+            //List to hold directory items.
+            var items = new List<DirectoryItem>();
+
+            #region GetFolders
+
+            //try/catch to check each drive to make sure something is there to populate the tree.  Bad practice to not handle errors. 
+            //get directories and add to list
+            try
+            {
+                var dirs = Directory.GetDirectories(FullPath);
+                if(dirs.Length > 0)
+                {
+                    items.AddRange(dirs.Select(dir => new DirectoryItem 
+                    { 
+                        FullPath = dir, 
+                        Type = DirectoryItemType.Folder 
+                    }));
+                }
+
+            } catch {
+                Debug("Caught an error when getting directories!");
+            }
+            #endregion GetFolders
+
+            #region GetFiles
+
+
+            //try/catch to check each drive to make sure something is there to populate the tree.  Bad practice to not handle errors. 
+            //get files and add to list
+            try
+            {
+                var fileDirs = Directory.GetFiles(FullPath);
+                if (fileDirs.Length > 0)
+                {
+                    items.AddRange(fileDirs.Select(fileDir => new DirectoryItem 
+                    { 
+                        FullPath = fileDir, 
+                        Type = DirectoryItemType.File 
+                    }));
+                }
+
+            }
+            catch
+            {
+                Debug("Caught an error when getting file names!");
+            }
+
+
+            return null;
+            #endregion GetFiles
+        }
+
         #region GetFileFolderName
         /// <summary>
         /// Helper method to find the file or folder name from a full path. 
@@ -58,5 +117,19 @@ namespace WpfBasicsApp
         }
 
         #endregion GetFileFolderName
+
+        #region Debugger
+        /// <summary>
+        /// Debug for testing purposes.  Writes out to console with a message.
+        /// </summary>
+        /// <param name="message">  Message to pass through the debugger. </param> 
+        private static void Debug(string message)
+        {
+            //this is called an interpolated string.  Basically the message from debug gets passed in the { }.
+            //      format:
+            //          $ + some text + {message being passed as a parameter}
+            System.Diagnostics.Debug.WriteLine($"Debug: {message}");
+        }
+        #endregion Debugger
     }
 }
