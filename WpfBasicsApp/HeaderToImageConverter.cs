@@ -41,21 +41,36 @@ namespace WpfBasicsApp
             // Get the name of the file or folder
             var name = MainWindow.GetFileFolderName(path);
 
+
             //Check value of name, if blank  (""), then we assume its a drive (file/folders will not be blank)
             if(string.IsNullOrEmpty(name))
             {
                 image = "Images/drive.png";
             }
             //if the path and attirbutes contains a directory, then we know it's a folder.
-            else if (new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
+            if (new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
             {
                 image = "Images/folder_closed.png";
             }
 
+            //int count = 0;
+            //foreach (char i in name)
+            //{
+            //    if (i.Equals('\\'))
+            //    {
+            //        count++;
+            //    }
+            //}
+            ////check if we are in a subdirectory and if so, use folder open icon.
+            //if (count >= 3)
+            //{
+            //    image = "Images/folder_open.png";
+            //}
 
 
-            //hard coding "Images" folder path, specific to WPF as way to access resources using URIs
-            return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
+
+                //hard coding "Images" folder path, specific to WPF as way to access resources using URIs
+                return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
 
         }
 
