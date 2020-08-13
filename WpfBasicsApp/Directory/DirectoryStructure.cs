@@ -58,8 +58,6 @@ namespace WpfBasicsApp
             #endregion GetFolders
 
             #region GetFiles
-
-
             //try/catch to check each drive to make sure something is there to populate the tree.  Bad practice to not handle errors. 
             //get files and add to list
             try
@@ -81,7 +79,7 @@ namespace WpfBasicsApp
             }
 
 
-            return null;
+            return items;
             #endregion GetFiles
         }
 
