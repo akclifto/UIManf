@@ -39,7 +39,7 @@ namespace WpfBasicsApp
             var image = "Images/file.png";
 
             // Get the name of the file or folder
-            var name = MainWindow.GetFileFolderName(path);
+            var name = DirectoryStructure.GetFileFolderName(path);
 
 
             //Check value of name, if blank  (""), then we assume its a drive (file/folders will not be blank)

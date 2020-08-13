@@ -110,7 +110,7 @@ namespace WpfBasicsApp
                 var subItem = new TreeViewItem()
                 {
                     //set the header as the folder name
-                    Header = GetFileFolderName(directoryPath),
+                    Header = DirectoryStructure.GetFileFolderName(directoryPath),
                     //set tag as full path name
                     Tag = directoryPath
                 };
@@ -158,7 +158,7 @@ namespace WpfBasicsApp
                 var subItem = new TreeViewItem()
                 {
                     //set the header as the file name
-                    Header = GetFileFolderName(filepath),
+                    Header = DirectoryStructure.GetFileFolderName(filepath),
                     //set tag as full path name
                     Tag = filepath
                 };

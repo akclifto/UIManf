@@ -1,11 +1,13 @@
-﻿
-namespace WpfBasicsApp.Directory
+﻿namespace WpfBasicsApp
 {
     /// <summary>
     /// Class to query information about the directories for the left side of the panel.
     /// </summary>
     public static class DirectoryStructure
     {
+
+        
+
         #region Helper Methods:  GetFileFolderName
         /// <summary>
         /// Helper method to find the file or folder name from a full path. 

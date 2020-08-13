@@ -1,4 +1,4 @@
-﻿namespace WpfBasicsApp.Directory.Data
+﻿namespace WpfBasicsApp
 {
     /// <summary>
     /// Class to store information about a diectory item (drive, file, folder).
@@ -22,8 +22,9 @@
         /// </summary>
         public string name 
         { 
+            //if the directory item type is a drive, return the fullpath (which will be the logical drive C,D,E, etc.), otherwise return its full path (meaning its a folder or file.)
             get { 
-                return DirectoryStructure.GetFileFolderName(this.FullPath); 
+                return this.Type == DirectoryItemType.Drive ? this.FullPath : DirectoryStructure.GetFileFolderName(this.FullPath); 
             } 
         }
 
