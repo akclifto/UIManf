@@ -1,4 +1,8 @@
-﻿namespace WpfBasicsApp
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace WpfBasicsApp
 {
     /// <summary>
     /// Class to query information about the directories for the left side of the panel.
@@ -6,9 +10,23 @@
     public static class DirectoryStructure
     {
 
-        
+        #region GetLogicalDrives
+        /// <summary>
+        /// Return a list of the logical drives on the machine
+        /// </summary>
+        /// <returns></returns>
+        public static List<DirectoryItem> GetLogicalDrives()
+        {
 
-        #region Helper Methods:  GetFileFolderName
+            return Directory.GetLogicalDrives().Select(drive => new DirectoryItem
+            {
+                FullPath = drive,
+                Type = DirectoryItemType.Drive
+            }).ToList();
+        }
+        #endregion GetLogicalDrives
+
+        #region GetFileFolderName
         /// <summary>
         /// Helper method to find the file or folder name from a full path. 
         /// </summary>
@@ -39,6 +57,6 @@
 
         }
 
-        #endregion Helper Methods:  GetFileFolderName
+        #endregion GetFileFolderName
     }
 }
