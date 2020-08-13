@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Left column:  folder tree view panel-->
-            <StackPanel x:Name="TreeViewPanel" Grid.Column="0">
+            <StackPanel x:Name="TreeViewPanel" Height="875" Grid.Column="0">
 
                 <TreeView x:Name="FolderView">
                     <TreeView.Resources>
@@ -57,8 +57,6 @@
                                     </DataTemplate>
                                 </Setter.Value>
                             </Setter>
-                            
-                            
                         </Style>
 
                     </TreeView.Resources>
