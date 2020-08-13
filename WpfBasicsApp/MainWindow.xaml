@@ -41,7 +41,16 @@
                                     <DataTemplate>
                                         <!--Icon placement and alignment in stackpanel-->
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Width="20" Margin="2" Source="Images/drive.png"/>
+                                            <!-- We are in the header right now of the treeviewitem, and need to get the Tag 
+                                            for the Source binding so we need to step back up the tree first, then bind to 
+                                            the tag for the image.-->
+                                            <Image Width="20" Margin="2" 
+                                                   Source="{Binding 
+                                                        RelativeSource= {RelativeSource Mode=FindAncestor, 
+                                                        AncestorType={x:Type TreeViewItem}},
+                                                        Path=Tag,
+                                                        Converter={x:Static local:HeaderToImageConverter.Instance}}"/>
+                                            
                                             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
                                         </StackPanel>
                                       

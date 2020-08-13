@@ -186,12 +186,12 @@ namespace WpfBasicsApp
         /// </summary>
         /// <param name="filepath">The full path name</param>
         /// <returns>Returns just the last part of the filepath name (C:\Some Folder\file.png would return "file.png")</returns>
-        private string GetFileFolderName(string filepath)
+        public static string GetFileFolderName(string filepath)
         {
             //if no path, return empty., 
             if (string.IsNullOrEmpty(filepath))
             {
-                Debug("File Folder Name path is empty, returning empty");
+                //Debug("File Folder Name path is empty, returning empty");
                 return string.Empty;
             }
 
