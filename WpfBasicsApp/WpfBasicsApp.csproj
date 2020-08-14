@@ -73,6 +73,7 @@
     <Compile Include="Directory\Data\DirectoryItem.cs" />
     <Compile Include="Directory\Data\DirectoryItemType.cs" />
     <Compile Include="Directory\DirectoryStructure.cs" />
+    <Compile Include="Directory\ViewModel\ActionCommand.cs" />
     <Compile Include="Directory\ViewModel\BaseViewModel.cs" />
     <Compile Include="Directory\ViewModel\DirectoryItemViewModel.cs" />
     <Compile Include="HeaderToImageConverter.cs" />

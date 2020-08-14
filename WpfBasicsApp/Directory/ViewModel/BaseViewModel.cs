@@ -4,20 +4,15 @@ using System.ComponentModel;
 namespace WpfBasicsApp
 {
     /// <summary>
-    /// Here is the base view model that executes property changed events as needed. 
+    /// Here is the base view model that executes property changed events as needed.
     /// </summary>
-    //Fody.propertyChanged weaver 
+    //Fody.propertyChanged weaver
     [AddINotifyPropertyChangedInterface]
-
-
-
     public class BaseViewModel : INotifyPropertyChanged
     {
         /// <summary>
-        /// Event changes when any child property has its value changed. 
+        /// Event changes when any child property has its value changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-
-
     }
 }
