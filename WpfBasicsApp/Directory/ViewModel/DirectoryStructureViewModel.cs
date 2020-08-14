@@ -1,0 +1,7 @@
+﻿
+namespace WpfBasicsApp
+{
+    class DirectoryStructureViewModel
+    {
+    }
+}
