@@ -10,7 +10,7 @@ namespace WpfBasicsApp
     /// Class to convert header type to use the corresponding correct image (drive, file, folder_closed, folder_open)
     /// </summary>
     /// 
-    [ValueConversion(typeof(string), typeof(BitmapImage))]
+    [ValueConversion(typeof(DirectoryItemType), typeof(BitmapImage))]
 
     public class HeaderToImageConverter : IValueConverter
     {
@@ -26,52 +26,22 @@ namespace WpfBasicsApp
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            //get the full path of the value
-            var path = (string)value;
-
-            //check for null
-            if (path == null)
-            {
-                return null;
-            }
 
             //default image used if can't find the binded image path
             var image = "Images/file.png";
 
-            // Get the name of the file or folder
-            var name = DirectoryStructure.GetFileFolderName(path);
-
-
-            //Check value of name, if blank  (""), then we assume its a drive (file/folders will not be blank)
-            if(string.IsNullOrEmpty(name))
+            switch ((DirectoryItemType) value)
             {
-                image = "Images/drive.png";
-            }
-            //if the path and attirbutes contains a directory, then we know it's a folder.
-            if (new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
-            {
-                image = "Images/folder_closed.png";
+                case DirectoryItemType.Drive:
+                    image = "Images/drive.png";
+                    break;
+                case DirectoryItemType.Folder:
+                    image = "Images/folder_closed.png";
+                    break;
             }
 
-            //int count = 0;
-            //foreach (char i in name)
-            //{
-            //    if (i.Equals('\\'))
-            //    {
-            //        count++;
-            //    }
-            //}
-            ////check if we are in a subdirectory and if so, use folder open icon.
-            //if (count >= 3)
-            //{
-            //    image = "Images/folder_open.png";
-            //}
-
-
-
-                //hard coding "Images" folder path, specific to WPF as way to access resources using URIs
-                return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
-
+            //hard coding "Images" folder path, specific to WPF as way to access resources using URIs
+            return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
@@ -10,8 +9,8 @@ namespace WpfBasicsApp
     /// </summary>
     public class DirectoryItemViewModel : BaseViewModel
     {
+        #region Public Properties
 
-        #region Public Properties   
         /// <summary>
         /// The type of this item.
         /// </summary>
@@ -27,7 +26,7 @@ namespace WpfBasicsApp
         /// </summary>
         public string Name
         {
-            // if the directory item type is a drive, return the fullpath (which will be the logical drive C,D,E, etc.), 
+            // if the directory item type is a drive, return the fullpath (which will be the logical drive C,D,E, etc.),
             // otherwise return its full path (meaning its a folder or file.)
             get
             {
@@ -35,17 +34,21 @@ namespace WpfBasicsApp
             }
         }
 
-        #endregion Public Properties   
+        #endregion Public Properties
+
+
 
         #region Public Commands
+
         /// <summary>
-        /// UI command to expand the item. 
+        /// UI command to expand the item.
         /// </summary>
         public ICommand ExpandCommand { get; set; }
 
         #endregion Public Commands
 
         #region Constructor
+
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -58,24 +61,29 @@ namespace WpfBasicsApp
             //set the path and type
             this.FullPath = FullPath;
             this.Type = type;
+
+            //set children as needed.
+            this.ClearChildren();
         }
 
-        #endregion Constructor  
+        #endregion Constructor
+
+
 
         #region Helper Methods, Bools
 
         /// <summary>
         /// List of all children in the selected directory item.
         /// </summary>
-        //ObservableCollection is a list that has a INOtifyCollectionChanged event making it easy to work with 
+        //ObservableCollection is a list that has a INOtifyCollectionChanged event making it easy to work with
         //for UIs
         public ObservableCollection<DirectoryItemViewModel> Children { get; set; }
 
         /// <summary>
-        /// Check if the type of item can be expanded. 
+        /// Check if the type of item can be expanded.
         /// </summary>
         public bool CanExpand { get { return this.Type != DirectoryItemType.File; } }
-        
+
         /// <summary>
         /// Check if the tree list is already expanded and set bool appropriately.
         /// </summary>
@@ -89,10 +97,10 @@ namespace WpfBasicsApp
             set
             {
                 //if UI requests to expand, find all childrent in the given directory item.
-                if(value == true)
+                if (value == true)
                 {
                     Expand();
-                } 
+                }
                 else
                 {
                     this.ClearChildren();
@@ -102,19 +110,18 @@ namespace WpfBasicsApp
 
         /// <summary>
         /// Clear the children in the list, and make a new list if required.
-        /// This also adds a dummy item to show expand icon if required. 
+        /// This also adds a dummy item to show expand icon if required.
         /// </summary>
         private void ClearChildren()
         {
-            this.Children.Clear();
-            //this.Children = new ObservableCollection<DirectoryItemViewModel>();
+            //this.Children.Clear();
+            this.Children = new ObservableCollection<DirectoryItemViewModel>();
 
             // Show expand if not in a file
             if (this.Type != DirectoryItemType.File)
             {
                 this.Children.Add(null);
             }
-
         }
 
         #endregion Helper Methods, Bools
@@ -131,9 +138,8 @@ namespace WpfBasicsApp
             }
 
             //When we expand, we find all children.
-            this.Children = new ObservableCollection<DirectoryItemViewModel>(DirectoryStructure.GetDirectoryContents(FullPath).Select(content => 
+            this.Children = new ObservableCollection<DirectoryItemViewModel>(DirectoryStructure.GetDirectoryContents(this.FullPath).Select(content =>
                     new DirectoryItemViewModel(content.FullPath, content.Type)));
-
         }
     }
-}
+} 

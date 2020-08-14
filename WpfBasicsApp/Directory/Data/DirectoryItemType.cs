@@ -9,10 +9,12 @@
         /// Logical drive
         /// </summary>
         Drive,
+
         /// <summary>
         /// Folder within directory.
         /// </summary>
         Folder,
+
         /// <summary>
         /// A physical file.
         /// </summary>

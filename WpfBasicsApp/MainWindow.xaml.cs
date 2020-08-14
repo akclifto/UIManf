@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-
 
 namespace WpfBasicsApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// 
+    ///
     /// NOTE:  The logic here really shouldn't be in this file.  The is the UI code behind the layout.  Follow the MVC pattern and keep the logic in controller class(es)
-    /// separate from the model and view.  
+    /// separate from the model and view.
     /// </summary>
     public partial class MainWindow : Window
     {
         #region Constructor
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -23,17 +20,23 @@ namespace WpfBasicsApp
         {
             InitializeComponent();
 
+            this.DataContext = new DirectoryStructureViewModel();
+
+            //check to make sure the UI hooks to the directory structure and viewmodel correctly. 
+            //var d = new DirectoryStructureViewModel();
+            //var item = d.Items[0];
+            //d.Items[0].ExpandCommand.Execute(null);
+
+            //test to bind property into UI
             //this.DataContext = new Class1Test();
-
         }
-        #endregion
 
-        #region Left Side of Panel
+        #endregion Constructor
 
-        #endregion Left Side of Panel
 
 
         #region Right Side of panel: UI manf static form.
+
         /// <summary>
         /// Right side of the panel containing UI manf static form and information
         /// </summary>
@@ -76,15 +79,13 @@ namespace WpfBasicsApp
             MessageBox.Show("Placeholder:  Refresh Needs functionality");
         }
 
-
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            //generic adding to field just to make sure we can get some input we want in the field. 
+            //generic adding to field just to make sure we can get some input we want in the field.
             this.LengthTextBox.Text += ((CheckBox)sender).Content + " ";
             //Debug("CheckBox Checked function accessed and populated lengthTextBox field.");
         }
 
-        #endregion
-
+        #endregion Right Side of panel: UI manf static form.
     }
 }
