@@ -20,7 +20,7 @@
         /// <summary>
         /// Get the name of the file/folder directory item
         /// </summary>
-        public string name 
+        public string Name 
         { 
             //if the directory item type is a drive, return the fullpath (which will be the logical drive C,D,E, etc.), otherwise return its full path (meaning its a folder or file.)
             get { 

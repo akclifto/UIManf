@@ -27,8 +27,9 @@
             <!-- Left column:  folder tree view panel-->
             <StackPanel x:Name="TreeViewPanel" Grid.Column="0">
 
-                <!--don't bind to the view model itself, you would bind to a property (or method) in the view model -->
-                <Button Content="{Binding Test}" />   
+                <!--don't bind to the view model itself, you would bind to a property (or method) in the view model
+                Testing property binding with Class1Test -->
+                <!--<Button Content="{Binding Test}" />   -->
 
                 <TreeView x:Name="FolderView">
                     <TreeView.Resources>

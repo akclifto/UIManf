@@ -23,7 +23,7 @@ namespace WpfBasicsApp
         {
             InitializeComponent();
 
-            this.DataContext = new Class1();
+            //this.DataContext = new Class1Test();
 
         }
         #endregion
