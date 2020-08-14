@@ -9,7 +9,7 @@ namespace WpfBasicsApp
     //Fody.propertyChanged weaver 
     [AddINotifyPropertyChangedInterface]
 
-    
+
 
     public class BaseViewModel : INotifyPropertyChanged
     {
@@ -18,6 +18,6 @@ namespace WpfBasicsApp
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
 
-        
+
     }
 }
