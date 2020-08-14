@@ -28,3 +28,4 @@ C:\Users\Adam\source\repos\UIManf\WpfBasicsApp\obj\Debug\WpfBasicsApp.csproj.Gen
 C:\Users\Adam\source\repos\UIManf\WpfBasicsApp\obj\Debug\WpfBasicsApp.csproj.CoreCompileInputs.cache
 C:\Users\Adam\source\repos\UIManf\WpfBasicsApp\obj\Debug\WpfBasicsApp.exe
 C:\Users\Adam\source\repos\UIManf\WpfBasicsApp\obj\Debug\WpfBasicsApp.pdb
+C:\Users\Adam\source\repos\UIManf\WpfBasicsApp\obj\Debug\WpfBasicsApp.csproj.Fody.CopyLocal.cache
