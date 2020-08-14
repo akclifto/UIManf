@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
@@ -9,9 +8,8 @@ namespace WpfBasicsApp
     /// <summary>
     /// Class to convert header type to use the corresponding correct image (drive, file, folder_closed, folder_open)
     /// </summary>
-    /// 
+    ///
     [ValueConversion(typeof(DirectoryItemType), typeof(BitmapImage))]
-
     public class HeaderToImageConverter : IValueConverter
     {
         public static HeaderToImageConverter Instance = new HeaderToImageConverter();
@@ -26,15 +24,15 @@ namespace WpfBasicsApp
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
             //default image used if can't find the binded image path
             var image = "Images/file.png";
 
-            switch ((DirectoryItemType) value)
+            switch ((DirectoryItemType)value)
             {
                 case DirectoryItemType.Drive:
                     image = "Images/drive.png";
                     break;
+
                 case DirectoryItemType.Folder:
                     image = "Images/folder_closed.png";
                     break;
@@ -45,7 +43,7 @@ namespace WpfBasicsApp
         }
 
         /// <summary>
-        /// Convert image back to value.  Not suported for this type of use.  
+        /// Convert image back to value.  Not suported for this type of use.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>

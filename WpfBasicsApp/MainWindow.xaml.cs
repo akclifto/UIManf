@@ -22,7 +22,7 @@ namespace WpfBasicsApp
 
             this.DataContext = new DirectoryStructureViewModel();
 
-            //check to make sure the UI hooks to the directory structure and viewmodel correctly. 
+            //check to make sure the UI hooks to the directory structure and viewmodel correctly.
             //var d = new DirectoryStructureViewModel();
             //var item = d.Items[0];
             //d.Items[0].ExpandCommand.Execute(null);
@@ -32,8 +32,6 @@ namespace WpfBasicsApp
         }
 
         #endregion Constructor
-
-
 
         #region Right Side of panel: UI manf static form.
 

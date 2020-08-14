@@ -13,7 +13,7 @@ namespace WpfBasicsApp
 
         public string Test { get; set; }
 
-        //manual way to get/set property changed event. Can use NuGet tool Fody.PropertyChanged to automatically do this. 
+        //manual way to get/set property changed event. Can use NuGet tool Fody.PropertyChanged to automatically do this.
         //{
         //    get
         //    {

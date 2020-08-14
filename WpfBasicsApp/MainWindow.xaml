@@ -35,8 +35,7 @@
 
                     <TreeView.ItemContainerStyle>
                         <Style TargetType="{x:Type TreeViewItem}">
-                            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
-
+                            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
                         </Style>
                     </TreeView.ItemContainerStyle>
 
@@ -46,33 +45,36 @@
                                 <!-- We are in the header right now of the treeviewitem, and need to get the Tag
                                             for the Source binding so we need to step back up the tree first, then bind to
                                             the tag for the image.-->
-                                            <Image Width="20" Margin="2"
+                                <Image Width="20" Margin="2"
                                                    Source="{Binding Type,
                                                        Converter={x:Static local:HeaderToImageConverter.Instance}}" />
-                                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
-                                        </StackPanel>
-                            
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                            </StackPanel>
                         </HierarchicalDataTemplate>
-                        
                     </TreeView.ItemTemplate>
-                    
-                    
+
                     <!-- Previous way to bind to UI with explicit placement -->
                     <!--<TreeView.Resources>
 
-                        --><!-- Style TargetType="{x:Type TreeViewItem} is to specify, strictly, the type of thing you are
+                        -->
+                    <!-- Style TargetType="{x:Type TreeViewItem} is to specify, strictly, the type of thing you are
                         expecting to style.  -->
-                        <!-- This <Style> block is needed for each item in the tree view to set
-                        its parameters and template--><!--
+                    <!-- This <Style> block is needed for each item in the tree view to set
+                        its parameters and template-->
+                    <!--
                         <Style TargetType="{x:Type TreeViewItem}">
                             <Setter Property="HeaderTemplate">
                                 <Setter.Value>
                                     <DataTemplate>
-                                        --><!--Icon placement and alignment in stackpanel--><!--
+                                        -->
+                    <!--Icon placement and alignment in stackpanel-->
+                    <!--
                                         <StackPanel Orientation="Horizontal">
-                                            --><!-- We are in the header right now of the treeviewitem, and need to get the Tag
+                                            -->
+                    <!-- We are in the header right now of the treeviewitem, and need to get the Tag
                                             for the Source binding so we need to step back up the tree first, then bind to
-                                            the tag for the image.--><!--
+                                            the tag for the image.-->
+                    <!--
                                             <Image Width="20" Margin="2"
                                                    Source="{Binding
                                                         RelativeSource= {RelativeSource Mode=FindAncestor,
@@ -87,9 +89,6 @@
                             </Setter>
                         </Style>
                     </TreeView.Resources>-->
-                    
-                    
-                    
                 </TreeView>
             </StackPanel>
 

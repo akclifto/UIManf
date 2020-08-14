@@ -36,8 +36,6 @@ namespace WpfBasicsApp
 
         #endregion Public Properties
 
-
-
         #region Public Commands
 
         /// <summary>
@@ -67,8 +65,6 @@ namespace WpfBasicsApp
         }
 
         #endregion Constructor
-
-
 
         #region Helper Methods, Bools
 
@@ -142,4 +138,4 @@ namespace WpfBasicsApp
                     new DirectoryItemViewModel(content.FullPath, content.Type)));
         }
     }
-} 
+}
