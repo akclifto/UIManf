@@ -37,13 +37,30 @@ namespace WpfBasicsApp
 
         #endregion Public Properties   
 
-        #region public commands
+        #region Public Commands
         /// <summary>
         /// UI command to expand the item. 
         /// </summary>
         public ICommand ExpandCommand { get; set; }
 
-        #endregion
+        #endregion Public Commands
+
+        #region Constructor
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <param name="FullPath"> The full path in the directory to this item. </param>
+        /// <param name="type"> The type of directory item. </param>
+        public DirectoryItemViewModel(string FullPath, DirectoryItemType type)
+        {
+            //create the actionCommand
+            this.ExpandCommand = new ActionCommand(Expand);
+            //set the path and type
+            this.FullPath = FullPath;
+            this.Type = type;
+        }
+
+        #endregion Constructor  
 
         #region Helper Methods, Bools
 
@@ -107,8 +124,16 @@ namespace WpfBasicsApp
         /// </summary>
         private void Expand()
         {
-            //TODO: 
-            throw new NotImplementedException();
+            //base checks
+            if (this.Type == DirectoryItemType.File)
+            {
+                return;
+            }
+
+            //When we expand, we find all children.
+            this.Children = new ObservableCollection<DirectoryItemViewModel>(DirectoryStructure.GetDirectoryContents(FullPath).Select(content => 
+                    new DirectoryItemViewModel(content.FullPath, content.Type)));
+
         }
     }
 }
