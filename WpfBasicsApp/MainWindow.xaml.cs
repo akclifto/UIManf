@@ -22,6 +22,9 @@ namespace WpfBasicsApp
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new Class1();
+
         }
         #endregion
 
