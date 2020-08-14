@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 
 namespace WpfBasicsApp
 {
@@ -37,8 +38,10 @@ namespace WpfBasicsApp
         #endregion Public Properties   
 
         #region public commands
-
-
+        /// <summary>
+        /// UI command to expand the item. 
+        /// </summary>
+        public ICommand ExpandCommand { get; set; }
 
         #endregion
 
